@@ -1,0 +1,6 @@
+#!/bin/bash
+bison -d -o parser.cpp parser.y &&
+flex -o tokens.cpp tokens.l &&
+g++ -std=c++11 -o qc parser.cpp printast.cpp tokens.cpp main.cpp
+#g++ -std=c++11 -Wall -Wextra -o qc codegen.cpp parser.cpp tokens.cpp main.cpp
+
