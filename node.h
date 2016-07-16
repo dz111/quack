@@ -40,6 +40,7 @@ using VarDefList = std::vector<NVarDef*>;
 class NExpression : public Node {
 public:
   NExprType expr_type;
+  std::string value_type;
   NExpression(NExprType expr_type) : expr_type(expr_type) { }
 };
 

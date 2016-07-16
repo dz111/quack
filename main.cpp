@@ -3,6 +3,7 @@
 #include "node.h"
 #include "parser.hpp"
 #include "printast.h"
+#include "semantic.h"
 
 unsigned long curr_lineno = 1;
 FILE* fin;
@@ -24,8 +25,11 @@ int main(int argc, char* argv[]) {
 
 //  std::cout << programBlock << std::endl;
 
-  auto printast = PrintAst {};
-  printast.visit(programBlock);
+  //auto printast = PrintAst {};
+  //printast.visit(programBlock);
+
+  auto semantic = SemanticPass {};
+  semantic.visit(programBlock);
 
   delete programBlock;
   programBlock = nullptr;
